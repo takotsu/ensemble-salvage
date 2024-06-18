@@ -183,5 +183,3 @@ function saveScheduleChanges() {
     const newContent = document.getElementById('scheduleContent').innerHTML;
     updateFileOnGitHub('schedule.html', newContent, 'Update schedule');
 }
-
-

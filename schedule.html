@@ -59,7 +59,25 @@
                         </tr>
                     </thead>
                     <tbody id="scheduleTable">
-                        <!-- 既存のスケジュールを表示 -->
+                        <tr data-date="2024-06-09">
+                            <td>2024年6月9日</td>
+                            <td>13:00 - 19:00</td>
+                            <td>横浜市文化ホール</td>
+                            <td>
+                                <p>13:00　開場</p>
+                                <p>14:00　(人数揃い次第) ブランデン6番</p>
+                                <p>15:10　調和10番</p>
+                                <p>16:20　休憩</p>
+                                <p>16:35　調和11番</p>
+                                <p>17:35　ポルカ</p>
+                                <p>18:00　ロッシーニ3番</p>
+                                <p>19:00　終了</p>
+                            </td>
+                            <td>
+                                <button onclick="editSchedule(this)">編集</button>
+                                <button onclick="deleteSchedule(this)">削除</button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -86,11 +104,9 @@
             <label for="newScheduleContent">内容:</label>
             <textarea id="newScheduleContent" rows="4" placeholder="内容を入力"></textarea>
             <button onclick="addSchedule()">追加</button>
+            <button onclick="saveScheduleChanges()">スケジュールを保存</button>
         </div>
     </div>
     <script src="scripts.js"></script>
 </body>
 </html>
-
-<button onclick="saveScheduleChanges()">スケジュールを保存</button>
-
