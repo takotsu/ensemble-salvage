@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アンサンブル・サルベージ - 練習日程</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/classic_icon.png">
+</head>
+<body>
+    <header>
+        <h1>アンサンブル・サルベージ</h1>
+        <img id="headerImage" src="images/header.jpg" alt="ヘッダー画像">
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="members.html">メンバー</a></li>
+                <li><a href="schedule.html">練習日程</a></li>
+                <li><a href="activities.html">これまでの活動</a></li>
+                <li><a href="scores.html">楽譜</a></li>
+                <li><a href="recordings.html">音源</a></li>
+                <li><a href="videos.html">動画</a></li>
+                <li><a href="admin.html">管理者ページ</a></li>
+            </ul>
+            <button id="toggleView">PC版</button>
+        </nav>
+    </header>
+    <main>
+        <section id="schedule">
+            <h2>練習日程</h2>
+            <img src="images/schedule.jpg" alt="練習日程画像">
+            <div>
+                <label for="yearFilter">年:</label>
+                <select id="yearFilter" onchange="filterScheduleByDate()">
+                    <option value="all">すべての年</option>
+                    <!-- 2030年までのオプションを追加 -->
+                    <script>
+                        for (let year = 2024; year <= 2030; year++) {
+                            document.write(`<option value="${year}">${year}年</option>`);
+                        }
+                    </script>
+                </select>
+                <label for="monthFilter">月:</label>
+                <select id="monthFilter" onchange="filterScheduleByDate()">
+                    <option value="all">すべての月</option>
+                    <script>
+                        for (let month = 1; month <= 12; month++) {
+                            document.write(`<option value="${month.toString().padStart(2, '0')}">${month}月</option>`);
+                        }
+                    </script>
+                </select>
+            </div>
+            <p id="scheduleContent">定期練習のスケジュールと特別練習の日程をこちらに記載します。</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>日付</th>
+                        <th>時間</th>
+                        <th>場所</th>
+                        <th>内容</th>
+                    </tr>
+                </thead>
+                <tbody id="scheduleTable">
+                    <tr data-date="2024-06-25">
+                        <td>2024年6月25日</td>
+                        <td>14:00 - 17:00</td>
+                        <td>横浜市文化ホール</td>
+                        <td>定期練習</td>
+                    </tr>
+                    <tr data-date="2024-07-02">
+                        <td>2024年7月2日</td>
+                        <td>18:00 - 21:00</td>
+                        <td>横浜市文化ホール</td>
+                        <td>特別練習 - 新曲合わせ</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 アンサンブル・サルベージ</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

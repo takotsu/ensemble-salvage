@@ -2,12 +2,12 @@ body {
     font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #f8f9fa;
+    color: #343a40;
 }
 
 header {
-    background-color: #333;
+    background-color: #343a40;
     color: white;
     padding: 1em 0;
     text-align: center;
@@ -42,13 +42,13 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #555;
+    background-color: #495057;
 }
 
 button {
     padding: 0.5em 1em;
     margin: 0.5em 0;
-    background-color: #333;
+    background-color: #343a40;
     color: white;
     border: none;
     cursor: pointer;
@@ -56,7 +56,7 @@ button {
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #495057;
 }
 
 main {
@@ -106,16 +106,16 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #dee2e6;
 }
 
 th, td {
-    padding: 0.5em;
+    padding: 0.75em;
     text-align: left;
 }
 
 footer {
-    background-color: #333;
+    background-color: #343a40;
     color: white;
     text-align: center;
     padding: 1em 0;
@@ -133,8 +133,10 @@ img {
 
 textarea, input[type="date"], input[type="text"], input[type="password"], input[type="file"] {
     width: calc(100% - 1em);
-    padding: 0.5em;
+    padding: 0.75em;
     margin-bottom: 1em;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25em;
 }
 
 .mobile-view main {
