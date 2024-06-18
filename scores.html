@@ -26,25 +26,23 @@
     <main style="background-image: url('images/背景.png');">
         <section id="scores">
             <h2>楽譜</h2>
-            <img src="images/scores.png" alt="楽譜画像">
+            <img src="images/楽譜.png" alt="楽譜画像" style="width: 50%; display: block; margin: 0 auto;">
+            <p>団員用ページです</p>
             <input type="password" id="scorePassword" placeholder="パスワードを入力してください">
             <button onclick="checkPassword('scorePassword', 'scoreContent')">送信</button>
             <div id="scoreContent" style="display:none;">
                 <p>楽譜のページです。</p>
                 <ul>
-                    <li><a href="https://drive.google.com/drive/u/2/my-drive" target="_blank">楽譜1 - ベートーヴェン交響曲第5番</a></li>
-                    <li><a href="https://drive.google.com/drive/u/2/my-drive" target="_blank">楽譜2 - モーツァルト弦楽四重奏曲第14番</a></li>
+                    <li><a href="https://drive.google.com/file/d/1/view">楽譜1 - ベートーヴェン交響曲第5番</a></li>
+                    <li><a href="https://drive.google.com/file/d/2/view">楽譜2 - モーツァルト弦楽四重奏曲第14番</a></li>
                 </ul>
-                <h3>楽譜アップロード</h3>
-                <input type="file" id="scoreUpload" accept="application/pdf">
-                <button onclick="uploadScore()">アップロード</button>
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 アンサンブル・サルベージ</p>
     </footer>
-    <div id="adminSection">
+    <div id="adminSection" style="display: none;">
         <h2>管理者ページ</h2>
         <input type="text" id="adminUsername" placeholder="ユーザー名を入力してください">
         <input type="password" id="adminPassword" placeholder="パスワードを入力してください">
