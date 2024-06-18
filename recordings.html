@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>アンサンブル・サルベージ - 音源</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="treble_clef.png">
+    <link rel="icon" href="images/classic_icon.png">
 </head>
 <body>
     <header>
-        <h1>アンサンブル・サルベージ</h1>
-        <img id="headerImage" src="images/header.jpg" alt="ヘッダー画像">
+        <h1 id="headerTitle">アンサンブル・サルベージ</h1>
+        <img id="headerImage" src="images/header.png" alt="ヘッダー画像">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -24,10 +24,10 @@
             <button id="toggleView">PC版</button>
         </nav>
     </header>
-    <main>
+    <main style="background-image: url('images/背景.png');">
         <section id="recordings">
             <h2>音源</h2>
-            <img src="images/recordings.jpg" alt="音源画像">
+            <img src="images/音源.png" alt="音源画像">
             <input type="password" id="recordingPassword" placeholder="パスワードを入力してください">
             <button onclick="checkPassword('recordingPassword', 'recordingContent')">送信</button>
             <div id="recordingContent" style="display:none;">
@@ -48,29 +48,9 @@
         <input type="password" id="adminPassword" placeholder="パスワードを入力してください">
         <button onclick="adminLogin()">ログイン</button>
         <div id="adminContent" style="display:none;">
-            <h3>セクション編集</h3>
-            <div>
-                <label for="homeContentInput">Home:</label>
-                <textarea id="homeContentInput" rows="4" cols="50"></textarea>
-                <button onclick="updateSection('home')">更新</button>
-            </div>
-            <h3>メンバー編集</h3>
-            <div id="membersAdmin">
-                <!-- メンバー20人分の編集 -->
-                <script>
-                    for (let i = 0; i < 20; i++) {
-                        document.write(`
-                            <div>
-                                <label for="member${i}Name">メンバー${i + 1}:</label>
-                                <input type="text" id="member${i}Name" placeholder="名前を入力">
-                                <label for="member${i}Image">画像URL:</label>
-                                <input type="text" id="member${i}Image" placeholder="画像URLを入力">
-                            </div>
-                        `);
-                    }
-                </script>
-                <button onclick="updateMembers()">更新</button>
-            </div>
+            <h3>音源編集</h3>
+            <textarea id="recordingsContentInput" rows="4" cols="50"></textarea>
+            <button onclick="updateSection('recordingsContent')">更新</button>
         </div>
     </div>
     <script src="scripts.js"></script>

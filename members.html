@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>アンサンブル・サルベージ - メンバー</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="treble_clef.png">
+    <link rel="icon" href="images/classic_icon.png">
 </head>
 <body>
     <header>
-        <h1>アンサンブル・サルベージ</h1>
-        <img id="headerImage" src="images/header.jpg" alt="ヘッダー画像">
+        <h1 id="headerTitle">アンサンブル・サルベージ</h1>
+        <img id="headerImage" src="images/header.png" alt="ヘッダー画像">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -24,10 +24,10 @@
             <button id="toggleView">PC版</button>
         </nav>
     </header>
-    <main>
+    <main style="background-image: url('images/背景.png');">
         <section id="members">
             <h2>メンバー</h2>
-            <img src="images/members.jpg" alt="メンバー画像">
+            <img src="images/メンバー.png" alt="メンバー画像">
             <p id="membersContent">団員紹介のページです。</p>
             <div class="members">
                 <div id="member0" class="member">
@@ -63,9 +63,9 @@
         <div id="adminContent" style="display:none;">
             <h3>セクション編集</h3>
             <div>
-                <label for="homeContentInput">Home:</label>
-                <textarea id="homeContentInput" rows="4" cols="50"></textarea>
-                <button onclick="updateSection('home')">更新</button>
+                <label for="membersContentInput">メンバー内容:</label>
+                <textarea id="membersContentInput" rows="4" cols="50"></textarea>
+                <button onclick="updateSection('membersContent')">更新</button>
             </div>
             <h3>メンバー編集</h3>
             <div id="membersAdmin">
