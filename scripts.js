@@ -154,3 +154,34 @@ window.onload = function() {
     loadAdminSection();
     loadCurrentContent();
 }
+
+function updateFileOnGitHub(path, content, message) {
+    fetch('http://localhost:5000/update-file', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            path: path,
+            content: btoa(unescape(encodeURIComponent(content))), // Base64エンコード
+            message: message
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === 'File updated successfully') {
+            alert('ファイルが更新されました。');
+        } else {
+            alert('ファイルの更新に失敗しました。');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+// 例: スケジュールを更新する場合
+function saveScheduleChanges() {
+    const newContent = document.getElementById('scheduleContent').innerHTML;
+    updateFileOnGitHub('schedule.html', newContent, 'Update schedule');
+}
+
+
