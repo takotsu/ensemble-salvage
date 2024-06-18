@@ -2,7 +2,7 @@ let loggedIn = false;
 
 function checkPassword(inputId, contentId) {
     const password = document.getElementById(inputId).value;
-    const validPassword = "yamashin"; // パスワードを設定
+    const validPassword = "yamashin";
 
     if (password === validPassword) {
         document.getElementById(contentId).style.display = "block";
@@ -28,40 +28,18 @@ function adminLogin() {
 
 function loadCurrentContent() {
     if (loggedIn) {
-        document.getElementById('homeContentInput').value = document.getElementById('homeContent').innerHTML.trim().replace(/<br>/g, '\n');
-        for (let i = 0; i < 20; i++) {
-            document.getElementById(`member${i}Name`).value = document.querySelector(`#member${i} h3`).textContent;
-            document.getElementById(`member${i}Image`).value = document.querySelector(`#member${i} img`).src;
-        }
+        document.getElementById('aboutContentInput').value = document.getElementById('aboutContent').innerHTML.trim().replace(/<br>/g, '\n');
     }
 }
 
-function updateSection(section) {
-    const contentId = section + 'Content';
-    const inputId = section + 'ContentInput';
-    const newContent = document.getElementById(inputId).value;
-
+function updateSection(sectionId) {
+    const newContent = document.getElementById(sectionId + 'Input').value;
     if (newContent) {
-        document.getElementById(contentId).innerHTML = newContent.replace(/\n/g, '<br>');
-        alert(section + 'の内容が更新されました。');
+        document.getElementById(sectionId).innerHTML = newContent.replace(/\n/g, '<br>');
+        alert(sectionId + 'の内容が更新されました。');
     } else {
         alert('更新する内容を入力してください。');
     }
-}
-
-function updateMembers() {
-    for (let i = 0; i < 20; i++) {
-        const name = document.getElementById(`member${i}Name`).value;
-        const imageUrl = document.getElementById(`member${i}Image`).value;
-
-        if (name) {
-            document.querySelector(`#member${i} h3`).textContent = name;
-        }
-        if (imageUrl) {
-            document.querySelector(`#member${i} img`).src = imageUrl;
-        }
-    }
-    alert('メンバー情報が更新されました。');
 }
 
 function loadAdminSection() {
