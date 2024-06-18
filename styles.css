@@ -15,8 +15,8 @@ header {
 
 header h1 {
     margin: 0;
-    background-color: white; /* 追加 */
-    display: inline-block; /* 追加 */
+    background-color: white;
+    display: inline-block;
 }
 
 header img {
@@ -49,9 +49,9 @@ main {
 
 section {
     margin-bottom: 20px;
-    background-color: white; /* 追加 */
-    padding: 10px; /* 追加 */
-    border-radius: 8px; /* 追加 */
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
 }
 
 footer {
