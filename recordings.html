@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アンサンブル・サルベージ - 音源</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="treble_clef.png">
+</head>
+<body>
+    <header>
+        <h1>アンサンブル・サルベージ</h1>
+        <img id="headerImage" src="images/header.jpg" alt="ヘッダー画像">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="members.html">メンバー</a></li>
+                <li><a href="schedule.html">練習日程</a></li>
+                <li><a href="activities.html">これまでの活動</a></li>
+                <li><a href="scores.html">楽譜</a></li>
+                <li><a href="recordings.html">音源</a></li>
+                <li><a href="videos.html">動画</a></li>
+                <li><a href="admin.html">管理者ページ</a></li>
+            </ul>
+            <button id="toggleView">PC版</button>
+        </nav>
+    </header>
+    <main>
+        <section id="recordings">
+            <h2>音源</h2>
+            <img src="images/recordings.jpg" alt="音源画像">
+            <input type="password" id="recordingPassword" placeholder="パスワードを入力してください">
+            <button onclick="checkPassword('recordingPassword', 'recordingContent')">送信</button>
+            <div id="recordingContent" style="display:none;">
+                <p>音源のページです。</p>
+                <ul>
+                    <li><a href="recordings/recording1.mp3">音源1 - ベートーヴェン交響曲第5番</a></li>
+                    <li><a href="recordings/recording2.mp3">音源2 - モーツァルト弦楽四重奏曲第14番</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 アンサンブル・サルベージ</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
