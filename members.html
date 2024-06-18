@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>アンサンブル・サルベージ - Home</title>
+    <title>アンサンブル・サルベージ - メンバー</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="treble_clef.png">
 </head>
@@ -26,17 +26,27 @@
         </nav>
     </header>
     <main>
-        <section id="home">
-            <h2>目次</h2>
-            <ul>
-                <li><a href="members.html">メンバー</a></li>
-                <li><a href="schedule.html">練習日程</a></li>
-                <li><a href="activities.html">これまでの活動</a></li>
-                <li><a href="scores.html">楽譜</a></li>
-                <li><a href="recordings.html">音源</a></li>
-                <li><a href="videos.html">動画</a></li>
-                <li><a href="admin.html">管理者ページ</a></li>
-            </ul>
+        <section id="members">
+            <h2>メンバー</h2>
+            <img src="images/members.jpg" alt="メンバー画像">
+            <p id="membersContent">団員紹介のページです。</p>
+            <div class="members">
+                <!-- メンバーのテンプレート -->
+                <template id="memberTemplate">
+                    <div class="member">
+                        <img src="images/member.jpg" alt="メンバー">
+                        <h3>メンバー</h3>
+                        <p>担当と簡単な紹介</p>
+                    </div>
+                </template>
+                <!-- メンバー20人分 -->
+                <script>
+                    for (let i = 0; i < 20; i++) {
+                        const template = document.getElementById('memberTemplate').content.cloneNode(true);
+                        document.querySelector('.members').appendChild(template);
+                    }
+                </script>
+            </div>
         </section>
     </main>
     <footer>

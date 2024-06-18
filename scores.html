@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>アンサンブル・サルベージ - Home</title>
+    <title>アンサンブル・サルベージ - 楽譜</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="treble_clef.png">
 </head>
@@ -26,17 +26,18 @@
         </nav>
     </header>
     <main>
-        <section id="home">
-            <h2>目次</h2>
-            <ul>
-                <li><a href="members.html">メンバー</a></li>
-                <li><a href="schedule.html">練習日程</a></li>
-                <li><a href="activities.html">これまでの活動</a></li>
-                <li><a href="scores.html">楽譜</a></li>
-                <li><a href="recordings.html">音源</a></li>
-                <li><a href="videos.html">動画</a></li>
-                <li><a href="admin.html">管理者ページ</a></li>
-            </ul>
+        <section id="scores">
+            <h2>楽譜</h2>
+            <img src="images/scores.jpg" alt="楽譜画像">
+            <input type="password" id="scorePassword" placeholder="パスワードを入力してください">
+            <button onclick="checkPassword('scorePassword', 'scoreContent')">送信</button>
+            <div id="scoreContent" style="display:none;">
+                <p>楽譜のページです。</p>
+                <ul>
+                    <li><a href="scores/sheet1.pdf">楽譜1 - ベートーヴェン交響曲第5番</a></li>
+                    <li><a href="scores/sheet2.pdf">楽譜2 - モーツァルト弦楽四重奏曲第14番</a></li>
+                </ul>
+            </div>
         </section>
     </main>
     <footer>
