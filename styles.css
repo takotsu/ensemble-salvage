@@ -47,6 +47,17 @@ main {
 
 section {
     margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
 }
 
 footer {
@@ -80,4 +91,16 @@ footer {
 
 #adminSection button:hover {
     background: #555;
+}
+
+@media (max-width: 600px) {
+    header img {
+        width: 100%;
+        height: auto;
+    }
+
+    section img {
+        width: 100%;
+        height: auto;
+    }
 }
