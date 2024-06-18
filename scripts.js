@@ -83,7 +83,7 @@ function addSchedule() {
     const startTime = document.getElementById('newScheduleStartTime').value;
     const endTime = document.getElementById('newScheduleEndTime').value;
     const location = document.getElementById('newScheduleLocation').value;
-    const content = document.getElementById('newScheduleContent').value;
+    const content = document.getElementById('newScheduleContent').value.replace(/\n/g, '<br>');
 
     if (date && startTime && endTime && location && content) {
         const table = document.getElementById('scheduleTable');
@@ -100,12 +100,31 @@ function addSchedule() {
         locationCell.textContent = location;
 
         const contentCell = newRow.insertCell(3);
-        contentCell.textContent = content;
+        contentCell.innerHTML = content;
 
         alert('スケジュールが追加されました。');
     } else {
         alert('全てのフィールドに入力してください。');
     }
+}
+
+function filterScheduleByDate() {
+    const yearFilter = document.getElementById('yearFilter').value;
+    const monthFilter = document.getElementById('monthFilter').value;
+
+    const rows = document.querySelectorAll('#scheduleTable tr');
+
+    rows.forEach(row => {
+        const date = row.getAttribute('data-date');
+        const year = date.split('-')[0];
+        const month = date.split('-')[1];
+
+        if ((yearFilter === 'all' || yearFilter === year) && (monthFilter === 'all' || monthFilter === month)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
 }
 
 window.onload = function() {
