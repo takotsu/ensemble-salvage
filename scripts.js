@@ -112,4 +112,33 @@ function filterScheduleByDate() {
 function uploadFiles(inputId, folder) {
     const files = document.getElementById(inputId).files;
     if (files.length > 0) {
-       
+        const formData = new FormData();
+        for (let i = 0; i < files.length; i++) {
+            formData.append('files[]', files[i]);
+        }
+        // 仮にバックエンドが用意されている場合の例
+        fetch(`/upload/${folder}`, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(`${folder}のアップロードが成功しました。`);
+            } else {
+                alert(`${folder}のアップロードに失敗しました。`);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert(`${folder}のアップロードに失敗しました。`);
+        });
+    } else {
+        alert('アップロードするファイルを選択してください。');
+    }
+}
+
+document.getElementById('toggleView').addEventListener('click', function() {
+    const isMobile = document.body.classList.toggle('mobile-view');
+    this.textContent = isMobile ? 'PC版' : 'スマホ版';
+});
