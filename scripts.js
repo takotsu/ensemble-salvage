@@ -102,10 +102,36 @@ function addSchedule() {
         const contentCell = newRow.insertCell(3);
         contentCell.innerHTML = content;
 
+        const actionCell = newRow.insertCell(4);
+        actionCell.innerHTML = '<button onclick="editSchedule(this)">編集</button> <button onclick="deleteSchedule(this)">削除</button>';
+
         alert('スケジュールが追加されました。');
     } else {
         alert('全てのフィールドに入力してください。');
     }
+}
+
+function deleteSchedule(button) {
+    const row = button.parentElement.parentElement;
+    row.parentElement.removeChild(row);
+    alert('スケジュールが削除されました。');
+}
+
+function editSchedule(button) {
+    const row = button.parentElement.parentElement;
+    const date = row.cells[0].textContent.replace(/年|日/g, '-').replace('月', '-').trim();
+    const time = row.cells[1].textContent.split(' - ');
+    const location = row.cells[2].textContent;
+    const content = row.cells[3].innerHTML.replace(/<br>/g, '\n');
+
+    document.getElementById('newScheduleDate').value = date;
+    document.getElementById('newScheduleStartTime').value = time[0];
+    document.getElementById('newScheduleEndTime').value = time[1];
+    document.getElementById('newScheduleLocation').value = location;
+    document.getElementById('newScheduleContent').value = content;
+
+    row.parentElement.removeChild(row);
+    alert('スケジュールを編集モードにしました。');
 }
 
 function filterScheduleByDate() {

@@ -55,6 +55,7 @@
                             <th>時間</th>
                             <th>場所</th>
                             <th>内容</th>
+                            <th>操作</th>
                         </tr>
                     </thead>
                     <tbody id="scheduleTable">
@@ -63,18 +64,21 @@
                             <td>14:00 - 17:00</td>
                             <td>横浜市文化ホール</td>
                             <td>定期練習</td>
+                            <td><button onclick="editSchedule(this)">編集</button> <button onclick="deleteSchedule(this)">削除</button></td>
                         </tr>
                         <tr data-date="2024-07-02">
                             <td>2024年7月2日</td>
                             <td>18:00 - 21:00</td>
                             <td>横浜市文化ホール</td>
                             <td>特別練習 - 新曲合わせ</td>
+                            <td><button onclick="editSchedule(this)">編集</button> <button onclick="deleteSchedule(this)">削除</button></td>
                         </tr>
                         <tr data-date="2024-06-18">
                             <td>2024年6月18日</td>
                             <td>12:59 - 14:59</td>
                             <td>平和会館</td>
                             <td>ああ</td>
+                            <td><button onclick="editSchedule(this)">編集</button> <button onclick="deleteSchedule(this)">削除</button></td>
                         </tr>
                         <tr data-date="2024-06-09">
                             <td>2024年6月9日</td>
@@ -91,6 +95,7 @@
                                 18:00　ロッシーニ3番<br>
                                 19:00　終了
                             </td>
+                            <td><button onclick="editSchedule(this)">編集</button> <button onclick="deleteSchedule(this)">削除</button></td>
                         </tr>
                     </tbody>
                 </table>
