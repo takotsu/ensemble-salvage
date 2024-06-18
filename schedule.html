@@ -49,30 +49,32 @@
                 </select>
             </div>
             <p id="scheduleContent">定期練習のスケジュールと特別練習の日程をこちらに記載します。</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>日付</th>
-                        <th>時間</th>
-                        <th>場所</th>
-                        <th>内容</th>
-                    </tr>
-                </thead>
-                <tbody id="scheduleTable">
-                    <tr data-date="2024-06-25">
-                        <td>2024年6月25日</td>
-                        <td>14:00 - 17:00</td>
-                        <td>横浜市文化ホール</td>
-                        <td>定期練習</td>
-                    </tr>
-                    <tr data-date="2024-07-02">
-                        <td>2024年7月2日</td>
-                        <td>18:00 - 21:00</td>
-                        <td>横浜市文化ホール</td>
-                        <td>特別練習 - 新曲合わせ</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div style="overflow-x:auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>日付</th>
+                            <th>時間</th>
+                            <th>場所</th>
+                            <th>内容</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduleTable">
+                        <tr data-date="2024-06-25">
+                            <td>2024年6月25日</td>
+                            <td>14:00 - 17:00</td>
+                            <td>横浜市文化ホール</td>
+                            <td>定期練習</td>
+                        </tr>
+                        <tr data-date="2024-07-02">
+                            <td>2024年7月2日</td>
+                            <td>18:00 - 21:00</td>
+                            <td>横浜市文化ホール</td>
+                            <td>特別練習 - 新曲合わせ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
     <footer>
@@ -87,6 +89,16 @@
             <h3>練習日程編集</h3>
             <textarea id="scheduleContentInput" rows="4" cols="50"></textarea>
             <button onclick="updateSection('scheduleContent')">更新</button>
+            <h3>練習日程追加</h3>
+            <label for="newScheduleDate">日付:</label>
+            <input type="date" id="newScheduleDate">
+            <label for="newScheduleTime">時間:</label>
+            <input type="time" id="newScheduleTime">
+            <label for="newScheduleLocation">場所:</label>
+            <input type="text" id="newScheduleLocation" placeholder="場所を入力">
+            <label for="newScheduleContent">内容:</label>
+            <input type="text" id="newScheduleContent" placeholder="内容を入力">
+            <button onclick="addSchedule()">追加</button>
         </div>
     </div>
     <script src="scripts.js"></script>
