@@ -19,6 +19,7 @@ function adminLogin() {
 
     if (username === validUsername && password === validPassword) {
         loggedIn = true;
+        document.getElementById("adminSection").style.display = "block";
         document.getElementById("adminContent").style.display = "block";
         loadCurrentContent();
     } else {
