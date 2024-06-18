@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>アンサンブル・サルベージ - 管理者ページ</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/classic_icon.png">
+    <link rel="icon" href="images/treble_clef.png">
 </head>
 <body>
     <header>
@@ -28,11 +28,13 @@
     <main>
         <section id="admin">
             <h2>管理者ページ</h2>
+            <p>このページでは、各セクションの内容を編集し、画像のアップロードや練習日程の管理を行うことができます。以下のフォームにログイン情報を入力してください。</p>
             <input type="text" id="adminUsername" placeholder="ユーザー名を入力してください">
             <input type="password" id="adminPassword" placeholder="パスワードを入力してください">
             <button onclick="adminLogin()">ログイン</button>
             <div id="adminContent" style="display:none;">
                 <h3>セクション編集</h3>
+                <p>ここでは、各セクションの内容を更新することができます。新しい内容を入力し、「更新」ボタンをクリックしてください。</p>
                 <div>
                     <label for="homeContentInput">Home:</label>
                     <textarea id="homeContentInput" rows="4" cols="50"></textarea>
@@ -59,6 +61,7 @@
                     <button onclick="updateSection('videos')">更新</button>
                 </div>
                 <h3>画像更新</h3>
+                <p>ここでは、各セクションの画像を更新することができます。画像のURLを入力し、「更新」ボタンをクリックしてください。</p>
                 <div>
                     <label for="headerImageInput">ヘッダー画像:</label>
                     <input type="text" id="headerImageInput" placeholder="画像のURLを入力してください">
@@ -100,6 +103,7 @@
                     <button onclick="updateImage('videos')">更新</button>
                 </div>
                 <h3>練習日程の編集</h3>
+                <p>ここでは、練習日程を追加・削除することができます。新しい日程を入力し、「追加」ボタンをクリックしてください。削除したい日程の「削除」ボタンをクリックすると、その日程が削除されます。</p>
                 <table>
                     <thead>
                         <tr>
@@ -121,14 +125,15 @@
                     </tbody>
                 </table>
                 <h3>楽譜と音源のアップロード</h3>
+                <p>ここでは、楽譜と音源のファイルをアップロードすることができます。アップロードしたいファイルを選択し、「アップロード」ボタンをクリックしてください。対応するファイル形式は次の通りです：楽譜 - PDF、音源 - MP3, MP4, WebM。</p>
                 <div>
                     <label for="scoreUpload">楽譜アップロード:</label>
-                    <input type="file" id="scoreUpload" multiple>
+                    <input type="file" id="scoreUpload" accept="application/pdf" multiple>
                     <button onclick="uploadFiles('scoreUpload', 'scores')">アップロード</button>
                 </div>
                 <div>
                     <label for="recordingUpload">音源アップロード:</label>
-                    <input type="file" id="recordingUpload" multiple>
+                    <input type="file" id="recordingUpload" accept="audio/mp3,video/mp4,video/webm" multiple>
                     <button onclick="uploadFiles('recordingUpload', 'recordings')">アップロード</button>
                 </div>
             </div>

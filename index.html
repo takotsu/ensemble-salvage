@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>アンサンブル・サルベージ</title>
+    <title>アンサンブル・サルベージ - 目次</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/treble_clef.png">
 </head>
 <body>
     <header>
@@ -12,255 +13,30 @@
         <img id="headerImage" src="images/header.jpg" alt="ヘッダー画像">
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#members">メンバー</a></li>
-                <li><a href="#schedule">練習日程</a></li>
-                <li><a href="#activities">これまでの活動</a></li>
-                <li><a href="#scores">楽譜</a></li>
-                <li><a href="#recordings">音源</a></li>
-                <li><a href="#videos">動画</a></li>
-                <li><a href="#admin">管理者ページ</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="members.html">メンバー</a></li>
+                <li><a href="schedule.html">練習日程</a></li>
+                <li><a href="activities.html">これまでの活動</a></li>
+                <li><a href="scores.html">楽譜</a></li>
+                <li><a href="recordings.html">音源</a></li>
+                <li><a href="videos.html">動画</a></li>
+                <li><a href="admin.html">管理者ページ</a></li>
             </ul>
             <button id="toggleView">PC版</button>
         </nav>
     </header>
     <main>
         <section id="home">
-            <h2>Home</h2>
-            <img src="images/home.jpg" alt="ホーム画像">
-            <p id="homeContent">ようこそ、アンサンブル・サルベージの公式ウェブサイトへ。私たちはクラシック音楽を愛し、共に演奏することを楽しむ室内楽団体です。</p>
-            <p>私たちのYouTubeチャンネルもご覧ください: <a href="https://www.youtube.com" target="_blank">YouTubeリンク</a></p>
-        </section>
-        <section id="members">
-            <h2>メンバー</h2>
-            <img src="images/members.jpg" alt="メンバー画像">
-            <p id="membersContent">団員紹介のページです。</p>
-            <div class="members">
-                <!-- メンバーのテンプレート -->
-                <template id="memberTemplate">
-                    <div class="member">
-                        <img src="images/member.jpg" alt="メンバー">
-                        <h3>メンバー</h3>
-                        <p>担当と簡単な紹介</p>
-                    </div>
-                </template>
-                <!-- メンバー20人分 -->
-                <script>
-                    for (let i = 0; i < 20; i++) {
-                        const template = document.getElementById('memberTemplate').content.cloneNode(true);
-                        document.querySelector('.members').appendChild(template);
-                    }
-                </script>
-            </div>
-            <button onclick="location.href='#home'">HOMEに戻る</button>
-        </section>
-        <section id="schedule">
-            <h2>練習日程</h2>
-            <img src="images/schedule.jpg" alt="練習日程画像">
-            <div>
-                <label for="yearFilter">年:</label>
-                <select id="yearFilter" onchange="filterScheduleByDate()">
-                    <option value="all">すべての年</option>
-                    <!-- 2030年までのオプションを追加 -->
-                    <script>
-                        for (let year = 2024; year <= 2030; year++) {
-                            document.write(`<option value="${year}">${year}年</option>`);
-                        }
-                    </script>
-                </select>
-                <label for="monthFilter">月:</label>
-                <select id="monthFilter" onchange="filterScheduleByDate()">
-                    <option value="all">すべての月</option>
-                    <script>
-                        for (let month = 1; month <= 12; month++) {
-                            document.write(`<option value="${month.toString().padStart(2, '0')}">${month}月</option>`);
-                        }
-                    </script>
-                </select>
-            </div>
-            <p id="scheduleContent">定期練習のスケジュールと特別練習の日程をこちらに記載します。</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>日付</th>
-                        <th>時間</th>
-                        <th>場所</th>
-                        <th>内容</th>
-                    </tr>
-                </thead>
-                <tbody id="scheduleTable">
-                    <tr data-date="2024-06-25">
-                        <td>2024年6月25日</td>
-                        <td>14:00 - 17:00</td>
-                        <td>横浜市文化ホール</td>
-                        <td>定期練習</td>
-                    </tr>
-                    <tr data-date="2024-07-02">
-                        <td>2024年7月2日</td>
-                        <td>18:00 - 21:00</td>
-                        <td>横浜市文化ホール</td>
-                        <td>特別練習 - 新曲合わせ</td>
-                    </tr>
-                </tbody>
-            </table>
-            <button onclick="location.href='#home'">HOMEに戻る</button>
-        </section>
-        <section id="activities">
-            <h2>これまでの活動</h2>
-            <img src="images/activities.jpg" alt="活動画像">
-            <p id="activitiesContent">これまでの演奏会やイベントの記録です。</p>
+            <h2>目次</h2>
             <ul>
-                <li>2023年12月 - クリスマスコンサート</li>
-                <li>2024年3月 - 春の定期演奏会</li>
-                <li>2024年5月 - ゴールデンウィークコンサート</li>
+                <li><a href="members.html">メンバー</a></li>
+                <li><a href="schedule.html">練習日程</a></li>
+                <li><a href="activities.html">これまでの活動</a></li>
+                <li><a href="scores.html">楽譜</a></li>
+                <li><a href="recordings.html">音源</a></li>
+                <li><a href="videos.html">動画</a></li>
+                <li><a href="admin.html">管理者ページ</a></li>
             </ul>
-            <button onclick="location.href='#home'">HOMEに戻る</button>
-        </section>
-        <section id="scores">
-            <h2>楽譜</h2>
-            <img src="images/scores.jpg" alt="楽譜画像">
-            <input type="password" id="scorePassword" placeholder="パスワードを入力してください">
-            <button onclick="checkPassword('scorePassword', 'scoreContent')">送信</button>
-            <div id="scoreContent" style="display:none;">
-                <p>楽譜のページです。</p>
-                <ul>
-                    <li><a href="scores/sheet1.pdf">楽譜1 - ベートーヴェン交響曲第5番</a></li>
-                    <li><a href="scores/sheet2.pdf">楽譜2 - モーツァルト弦楽四重奏曲第14番</a></li>
-                </ul>
-            </div>
-            <button onclick="location.href='#home'">HOMEに戻る</button>
-        </section>
-        <section id="recordings">
-            <h2>音源</h2>
-            <img src="images/recordings.jpg" alt="音源画像">
-            <input type="password" id="recordingPassword" placeholder="パスワードを入力してください">
-            <button onclick="checkPassword('recordingPassword', 'recordingContent')">送信</button>
-            <div id="recordingContent" style="display:none;">
-                <p>音源のページです。</p>
-                <ul>
-                    <li><a href="recordings/recording1.mp3">音源1 - ベートーヴェン交響曲第5番</a></li>
-                    <li><a href="recordings/recording2.mp3">音源2 - モーツァルト弦楽四重奏曲第14番</a></li>
-                </ul>
-            </div>
-            <button onclick="location.href='#home'">HOMEに戻る</button>
-        </section>
-        <section id="videos">
-            <h2>動画</h2>
-            <img src="images/videos.jpg" alt="動画画像">
-            <p id="videosContent">演奏動画のページです。</p>
-            <ul>
-                <li><a href="https://www.youtube.com/watch?v=example1" target="_blank">演奏動画1</a></li>
-                <li><a href="https://www.youtube.com/watch?v=example2" target="_blank">演奏動画2</a></li>
-            </ul>
-            <button onclick="location.href='#home'">HOMEに戻る</button>
-        </section>
-        <section id="admin">
-            <h2>管理者ページ</h2>
-            <input type="text" id="adminUsername" placeholder="ユーザー名を入力してください">
-            <input type="password" id="adminPassword" placeholder="パスワードを入力してください">
-            <button onclick="adminLogin()">ログイン</button>
-            <div id="adminContent" style="display:none;">
-                <h3>セクション編集</h3>
-                <div>
-                    <label for="homeContentInput">Home:</label>
-                    <textarea id="homeContentInput" rows="4" cols="50"></textarea>
-                    <button onclick="updateSection('home')">更新</button>
-                </div>
-                <div>
-                    <label for="membersContentInput">メンバー:</label>
-                    <textarea id="membersContentInput" rows="4" cols="50"></textarea>
-                    <button onclick="updateSection('members')">更新</button>
-                </div>
-                <div>
-                    <label for="scheduleContentInput">練習日程:</label>
-                    <textarea id="scheduleContentInput" rows="4" cols="50"></textarea>
-                    <button onclick="updateSection('schedule')">更新</button>
-                </div>
-                <div>
-                    <label for="activitiesContentInput">これまでの活動:</label>
-                    <textarea id="activitiesContentInput" rows="4" cols="50"></textarea>
-                    <button onclick="updateSection('activities')">更新</button>
-                </div>
-                <div>
-                    <label for="videosContentInput">動画:</label>
-                    <textarea id="videosContentInput" rows="4" cols="50"></textarea>
-                    <button onclick="updateSection('videos')">更新</button>
-                </div>
-                <h3>画像更新</h3>
-                <div>
-                    <label for="headerImageInput">ヘッダー画像:</label>
-                    <input type="text" id="headerImageInput" placeholder="画像のURLを入力してください">
-                    <button onclick="updateImage('header')">更新</button>
-                </div>
-                <div>
-                    <label for="homeImageInput">Home画像:</label>
-                    <input type="text" id="homeImageInput" placeholder="画像のURLを入力してください">
-                    <button onclick="updateImage('home')">更新</button>
-                </div>
-                <div>
-                    <label for="membersImageInput">メンバー画像:</label>
-                    <input type="text" id="membersImageInput" placeholder="画像のURLを入力してください">
-                    <button onclick="updateImage('members')">更新</button>
-                </div>
-                <div>
-                    <label for="scheduleImageInput">練習日程画像:</label>
-                    <input type="text" id="scheduleImageInput" placeholder="画像のURLを入力してください">
-                    <button onclick="updateImage('schedule')">更新</button>
-                </div>
-                <div>
-                    <label for="activitiesImageInput">活動画像:</label>
-                    <input type="text" id="activitiesImageInput" placeholder="画像のURLを入力してください">
-                    <button onclick="updateImage('activities')">更新</button>
-                </div>
-                <div>
-                    <label for="scoresImageInput">楽譜画像:</label>
-                    <input type="text" id="scoresImageInput" placeholder="画像のURLを入力してください">
-                    <button onclick="updateImage('scores')">更新</button>
-                </div>
-                <div>
-                    <label for="recordingsImageInput">音源画像:</label>
-                    <input type="text" id="recordingsImageInput" placeholder="画像のURLを入力してください">
-                    <button onclick="updateImage('recordings')">更新</button>
-                </div>
-                <div>
-                    <label for="videosImageInput">動画画像:</label>
-                    <input type="text" id="videosImageInput" placeholder="画像のURLを入力してください">
-                    <button onclick="updateImage('videos')">更新</button>
-                </div>
-                <h3>練習日程の編集</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>日付</th>
-                            <th>時間</th>
-                            <th>場所</th>
-                            <th>内容</th>
-                            <th>操作</th>
-                        </tr>
-                    </thead>
-                    <tbody id="adminScheduleTable">
-                        <tr>
-                            <td><input type="date"></td>
-                            <td><input type="text" placeholder="例: 14:00 - 17:00"></td>
-                            <td><input type="text" placeholder="場所を入力"></td>
-                            <td><input type="text" placeholder="内容を入力"></td>
-                            <td><button onclick="addScheduleRow(this)">追加</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h3>楽譜と音源のアップロード</h3>
-                <div>
-                    <label for="scoreUpload">楽譜アップロード:</label>
-                    <input type="file" id="scoreUpload" multiple>
-                    <button onclick="uploadFiles('scoreUpload', 'scores')">アップロード</button>
-                </div>
-                <div>
-                    <label for="recordingUpload">音源アップロード:</label>
-                    <input type="file" id="recordingUpload" multiple>
-                    <button onclick="uploadFiles('recordingUpload', 'recordings')">アップロード</button>
-                </div>
-            </div>
-            <button onclick="location.href='#home'">HOMEに戻る</button>
         </section>
     </main>
     <footer>
