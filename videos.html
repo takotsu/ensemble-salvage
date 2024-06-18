@@ -26,21 +26,18 @@
     <main style="background-image: url('images/背景.png');">
         <section id="videos">
             <h2>動画</h2>
-            <img src="images/videos.png" alt="動画画像">
-            <p id="videosContent">演奏動画のページです。</p>
+            <img src="images/動画.png" alt="動画画像" style="width: 50%; display: block; margin: 0 auto;">
+            <p>団員用ページです</p>
             <ul>
-                <li><a href="https://drive.google.com/drive/u/2/my-drive" target="_blank">演奏動画1</a></li>
-                <li><a href="https://drive.google.com/drive/u/2/my-drive" target="_blank">演奏動画2</a></li>
+                <li><a href="https://www.youtube.com/watch?v=example1" target="_blank">演奏動画1</a></li>
+                <li><a href="https://www.youtube.com/watch?v=example2" target="_blank">演奏動画2</a></li>
             </ul>
-            <h3>動画アップロード</h3>
-            <input type="file" id="videoUpload" accept="video/*">
-            <button onclick="uploadVideo()">アップロード</button>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 アンサンブル・サルベージ</p>
     </footer>
-    <div id="adminSection">
+    <div id="adminSection" style="display: none;">
         <h2>管理者ページ</h2>
         <input type="text" id="adminUsername" placeholder="ユーザー名を入力してください">
         <input type="password" id="adminPassword" placeholder="パスワードを入力してください">

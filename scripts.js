@@ -31,27 +31,23 @@ function loadCurrentContent() {
     if (loggedIn) {
         document.getElementById('headerTitleInput').value = document.getElementById('headerTitle').textContent.trim();
         document.getElementById('headerImageInput').value = document.getElementById('headerImage').src;
-        document.getElementById('aboutContentInput').value = document.getElementById('aboutContent').innerHTML.trim().replace(/<br>/g, '\n');
-    }
-}
 
-function updateHeader() {
-    const newTitle = document.getElementById('headerTitleInput').value;
-    const newImage = document.getElementById('headerImageInput').value;
-
-    if (newTitle) {
-        document.getElementById('headerTitle').textContent = newTitle;
+        const sections = ['home', 'members', 'schedule', 'activities', 'scores', 'recordings', 'videos'];
+        sections.forEach(section => {
+            const storedContent = localStorage.getItem(section);
+            if (storedContent) {
+                document.getElementById(section + 'Content').innerHTML = storedContent;
+                document.getElementById(section + 'ContentInput').value = storedContent.replace(/<br>/g, '\n');
+            }
+        });
     }
-    if (newImage) {
-        document.getElementById('headerImage').src = newImage;
-    }
-    alert('ヘッダーが更新されました。');
 }
 
 function updateSection(sectionId) {
-    const newContent = document.getElementById(sectionId + 'Input').value;
+    const newContent = document.getElementById(sectionId + 'ContentInput').value;
     if (newContent) {
-        document.getElementById(sectionId).innerHTML = newContent.replace(/\n/g, '<br>');
+        document.getElementById(sectionId + 'Content').innerHTML = newContent.replace(/\n/g, '<br>');
+        localStorage.setItem(sectionId, document.getElementById(sectionId + 'Content').innerHTML);
         alert(sectionId + 'の内容が更新されました。');
     } else {
         alert('更新する内容を入力してください。');
@@ -59,7 +55,7 @@ function updateSection(sectionId) {
 }
 
 function saveDraft(sectionId) {
-    const draftContent = document.getElementById(sectionId + 'Input').value;
+    const draftContent = document.getElementById(sectionId + 'ContentInput').value;
     localStorage.setItem(sectionId + 'Draft', draftContent);
     alert('下書きが保存されました。');
 }
@@ -67,7 +63,7 @@ function saveDraft(sectionId) {
 function loadDraft(sectionId) {
     const draftContent = localStorage.getItem(sectionId + 'Draft');
     if (draftContent) {
-        document.getElementById(sectionId + 'Input').value = draftContent;
+        document.getElementById(sectionId + 'ContentInput').value = draftContent;
     } else {
         alert('保存された下書きがありません。');
     }
@@ -156,4 +152,5 @@ function filterScheduleByDate() {
 
 window.onload = function() {
     loadAdminSection();
+    loadCurrentContent();
 }

@@ -16,18 +16,18 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="members.html">メンバー</a></li>
                 <li><a href="schedule.html">練習日程</a></li>
-                <li><a href="activities.html">これまでの活動</a></li>
+                <li><a href="activities.html">今までの活動</a></li>
                 <li><a href="scores.html">楽譜</a></li>
                 <li><a href="recordings.html">音源</a></li>
                 <li><a href="videos.html">動画</a></li>
             </ul>
-            <button id="toggleView">PC版</button>
         </nav>
     </header>
     <main style="background-image: url('images/背景.png');">
         <section id="recordings">
             <h2>音源</h2>
-            <img src="images/音源.png" alt="音源画像">
+            <img src="images/音源.png" alt="音源画像" style="max-width:100%; height:auto;">
+            <p>団員用ページです</p>
             <input type="password" id="recordingPassword" placeholder="パスワードを入力してください">
             <button onclick="checkPassword('recordingPassword', 'recordingContent')">送信</button>
             <div id="recordingContent" style="display:none;">
