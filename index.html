@@ -20,7 +20,6 @@
                 <li><a href="scores.html">楽譜</a></li>
                 <li><a href="recordings.html">音源</a></li>
                 <li><a href="videos.html">動画</a></li>
-                <li><a href="admin.html">管理者ページ</a></li>
             </ul>
             <button id="toggleView">PC版</button>
         </nav>
@@ -35,13 +34,43 @@
                 <li><a href="scores.html">楽譜</a></li>
                 <li><a href="recordings.html">音源</a></li>
                 <li><a href="videos.html">動画</a></li>
-                <li><a href="admin.html">管理者ページ</a></li>
             </ul>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 アンサンブル・サルベージ</p>
     </footer>
+    <div id="adminSection">
+        <h2>管理者ページ</h2>
+        <input type="text" id="adminUsername" placeholder="ユーザー名を入力してください">
+        <input type="password" id="adminPassword" placeholder="パスワードを入力してください">
+        <button onclick="adminLogin()">ログイン</button>
+        <div id="adminContent" style="display:none;">
+            <h3>セクション編集</h3>
+            <div>
+                <label for="homeContentInput">Home:</label>
+                <textarea id="homeContentInput" rows="4" cols="50"></textarea>
+                <button onclick="updateSection('home')">更新</button>
+            </div>
+            <h3>メンバー編集</h3>
+            <div id="membersAdmin">
+                <!-- メンバー20人分の編集 -->
+                <script>
+                    for (let i = 0; i < 20; i++) {
+                        document.write(`
+                            <div>
+                                <label for="member${i}Name">メンバー${i + 1}:</label>
+                                <input type="text" id="member${i}Name" placeholder="名前を入力">
+                                <label for="member${i}Image">画像URL:</label>
+                                <input type="text" id="member${i}Image" placeholder="画像URLを入力">
+                            </div>
+                        `);
+                    }
+                </script>
+                <button onclick="updateMembers()">更新</button>
+            </div>
+        </div>
+    </div>
     <script src="scripts.js"></script>
 </body>
 </html>

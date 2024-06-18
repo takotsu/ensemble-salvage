@@ -1,3 +1,5 @@
+let loggedIn = false;
+
 function checkPassword(inputId, contentId) {
     const password = document.getElementById(inputId).value;
     const validPassword = "yamashin"; // パスワードを設定
@@ -16,6 +18,7 @@ function adminLogin() {
     const validPassword = "yamashin";
 
     if (username === validUsername && password === validPassword) {
+        loggedIn = true;
         document.getElementById("adminContent").style.display = "block";
         loadCurrentContent();
     } else {
@@ -24,11 +27,13 @@ function adminLogin() {
 }
 
 function loadCurrentContent() {
-    document.getElementById('homeContentInput').value = document.getElementById('homeContent').innerHTML.trim().replace(/<br>/g, '\n');
-    document.getElementById('membersContentInput').value = document.getElementById('membersContent').innerHTML.trim().replace(/<br>/g, '\n');
-    document.getElementById('scheduleContentInput').value = document.getElementById('scheduleContent').innerHTML.trim().replace(/<br>/g, '\n');
-    document.getElementById('activitiesContentInput').value = document.getElementById('activitiesContent').innerHTML.trim().replace(/<br>/g, '\n');
-    document.getElementById('videosContentInput').value = document.getElementById('videosContent').innerHTML.trim().replace(/<br>/g, '\n');
+    if (loggedIn) {
+        document.getElementById('homeContentInput').value = document.getElementById('homeContent').innerHTML.trim().replace(/<br>/g, '\n');
+        for (let i = 0; i < 20; i++) {
+            document.getElementById(`member${i}Name`).value = document.querySelector(`#member${i} h3`).textContent;
+            document.getElementById(`member${i}Image`).value = document.querySelector(`#member${i} img`).src;
+        }
+    }
 }
 
 function updateSection(section) {
@@ -44,101 +49,27 @@ function updateSection(section) {
     }
 }
 
-function updateImage(section) {
-    const imageId = section + 'Image';
-    const inputId = section + 'ImageInput';
-    const newImageUrl = document.getElementById(inputId).value;
-    if (newImageUrl) {
-        document.getElementById(imageId).src = newImageUrl;
-        alert(section + 'の画像が更新されました。');
-    }
-}
+function updateMembers() {
+    for (let i = 0; i < 20; i++) {
+        const name = document.getElementById(`member${i}Name`).value;
+        const imageUrl = document.getElementById(`member${i}Image`).value;
 
-function addScheduleRow(button) {
-    const row = button.parentElement.parentElement;
-    const date = row.children[0].children[0].value;
-    const time = row.children[1].children[0].value;
-    const place = row.children[2].children[0].value;
-    const content = row.children[3].children[0].value;
-
-    if (date && time && place && content) {
-        const newRow = document.createElement('tr');
-        newRow.setAttribute('data-date', date);
-
-        newRow.innerHTML = `
-            <td>${date}</td>
-            <td>${time}</td>
-            <td>${place}</td>
-            <td>${content}</td>
-            <td><button onclick="removeScheduleRow(this)">削除</button></td>
-        `;
-
-        document.getElementById('scheduleTable').appendChild(newRow);
-
-        row.children[0].children[0].value = '';
-        row.children[1].children[0].value = '';
-        row.children[2].children[0].value = '';
-        row.children[3].children[0].value = '';
-
-        alert('練習日程が追加されました。');
-    } else {
-        alert('すべての項目を入力してください。');
-    }
-}
-
-function removeScheduleRow(button) {
-    const row = button.parentElement.parentElement;
-    row.remove();
-    alert('練習日程が削除されました。');
-}
-
-function filterScheduleByDate() {
-    const year = document.getElementById('yearFilter').value;
-    const month = document.getElementById('monthFilter').value;
-    const rows = document.querySelectorAll('#scheduleTable tr');
-
-    rows.forEach(row => {
-        const date = row.getAttribute('data-date');
-        const [rowYear, rowMonth] = date.split('-');
-
-        if ((year === 'all' || rowYear === year) && (month === 'all' || rowMonth === month)) {
-            row.style.display = '';
-        } else {
-            row.style.display = 'none';
+        if (name) {
+            document.querySelector(`#member${i} h3`).textContent = name;
         }
-    });
+        if (imageUrl) {
+            document.querySelector(`#member${i} img`).src = imageUrl;
+        }
+    }
+    alert('メンバー情報が更新されました。');
 }
 
-function uploadFiles(inputId, folder) {
-    const files = document.getElementById(inputId).files;
-    if (files.length > 0) {
-        const formData = new FormData();
-        for (let i = 0; i < files.length; i++) {
-            formData.append('files[]', files[i]);
-        }
-        // 仮にバックエンドが用意されている場合の例
-        fetch(`/upload/${folder}`, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert(`${folder}のアップロードが成功しました。`);
-            } else {
-                alert(`${folder}のアップロードに失敗しました。`);
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert(`${folder}のアップロードに失敗しました。`);
-        });
-    } else {
-        alert('アップロードするファイルを選択してください。');
+function loadAdminSection() {
+    if (loggedIn) {
+        document.getElementById("adminContent").style.display = "block";
     }
 }
 
-document.getElementById('toggleView').addEventListener('click', function() {
-    const isMobile = document.body.classList.toggle('mobile-view');
-    this.textContent = isMobile ? 'PC版' : 'スマホ版';
-});
+window.onload = function() {
+    loadAdminSection();
+}
