@@ -1,200 +1,83 @@
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    color: #343a40;
 }
 
 header {
-    background-color: #343a40;
-    color: white;
+    background: #333;
+    color: #fff;
     padding: 1em 0;
     text-align: center;
+}
+
+header h1 {
+    margin: 0;
 }
 
 header img {
     width: 100%;
-    max-width: 600px;
     height: auto;
-    display: block;
-    margin: 0 auto;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1em;
     margin: 0;
+    text-align: center;
 }
 
 nav ul li {
     display: inline;
+    margin: 0 10px;
 }
 
 nav ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    padding: 0.5em 1em;
-    transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #495057;
-}
-
-button {
-    padding: 0.5em 1em;
-    margin: 0.5em 0;
-    background-color: #343a40;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #495057;
 }
 
 main {
-    padding: 2em;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 section {
-    margin-bottom: 2em;
-    background: white;
-    padding: 1em;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-section img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    display: block;
-    margin: 0 auto 1em;
-}
-
-.member {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1em;
-    text-align: center;
-    flex-direction: column;
-}
-
-.member img {
-    border-radius: 50%;
-    margin-bottom: 0.5em;
-    width: 80px;
-    height: 80px;
-}
-
-.member h3 {
-    margin: 0;
-    font-size: 1em;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1em;
-}
-
-table, th, td {
-    border: 1px solid #dee2e6;
-}
-
-th, td {
-    padding: 0.75em;
-    text-align: left;
+    margin-bottom: 20px;
 }
 
 footer {
-    background-color: #343a40;
-    color: white;
+    background: #333;
+    color: #fff;
     text-align: center;
-    padding: 1em 0;
-    position: relative;
-    bottom: 0;
+    padding: 10px 0;
+}
+
+#adminSection {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+#adminSection input,
+#adminSection textarea {
     width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 1em;
+#adminSection button {
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
-textarea, input[type="date"], input[type="text"], input[type="password"], input[type="file"] {
-    width: calc(100% - 1em);
-    padding: 0.75em;
-    margin-bottom: 1em;
-    border: 1px solid #dee2e6;
-    border-radius: 0.25em;
-}
-
-.mobile-view main {
-    padding: 1em;
-}
-
-.mobile-view section {
-    margin-bottom: 1em;
-    padding: 0.5em;
-}
-
-.mobile-view .member img {
-    width: 60px;
-    height: 60px;
-}
-
-.mobile-view .member h3 {
-    font-size: 0.8em;
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .member {
-        flex-direction: column;
-    }
-
-    .member img {
-        margin-bottom: 0.5em;
-        width: 60px;
-        height: 60px;
-    }
-
-    .member h3 {
-        font-size: 0.8em;
-    }
-
-    table, th, td {
-        display: block;
-        width: 100%;
-    }
-
-    th, td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-    }
-
-    th::before, td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 0.5em;
-        text-align: left;
-        font-weight: bold;
-    }
+#adminSection button:hover {
+    background: #555;
 }
