@@ -55,6 +55,12 @@
         <section id="schedule">
             <h2>練習日程</h2>
             <img src="images/schedule.jpg" alt="練習日程画像">
+            <select id="monthFilter" onchange="filterScheduleByMonth()">
+                <option value="all">すべての月</option>
+                <option value="2024-06">2024年6月</option>
+                <option value="2024-07">2024年7月</option>
+                <!-- 必要な月を追加 -->
+            </select>
             <p id="scheduleContent">定期練習のスケジュールと特別練習の日程をこちらに記載します。</p>
             <table>
                 <thead>
@@ -65,14 +71,14 @@
                         <th>内容</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody id="scheduleTable">
+                    <tr data-date="2024-06-25">
                         <td>2024年6月25日</td>
                         <td>14:00 - 17:00</td>
                         <td>横浜市文化ホール</td>
                         <td>定期練習</td>
                     </tr>
-                    <tr>
+                    <tr data-date="2024-07-02">
                         <td>2024年7月2日</td>
                         <td>18:00 - 21:00</td>
                         <td>横浜市文化ホール</td>
@@ -199,6 +205,27 @@
                     <input type="text" id="videosImageInput" placeholder="画像のURLを入力してください">
                     <button onclick="updateImage('videos')">更新</button>
                 </div>
+                <h3>練習日程の編集</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>日付</th>
+                            <th>時間</th>
+                            <th>場所</th>
+                            <th>内容</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminScheduleTable">
+                        <tr>
+                            <td><input type="date"></td>
+                            <td><input type="text" placeholder="例: 14:00 - 17:00"></td>
+                            <td><input type="text" placeholder="場所を入力"></td>
+                            <td><input type="text" placeholder="内容を入力"></td>
+                            <td><button onclick="addScheduleRow(this)">追加</button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
