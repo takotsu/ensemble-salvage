@@ -12,6 +12,14 @@ header {
     text-align: center;
 }
 
+header img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -46,6 +54,14 @@ section {
     padding: 1em;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1em;
 }
 
 .member {
@@ -97,4 +113,6 @@ img {
 
 textarea {
     width: 100%;
-    padding: 0.5
+    padding: 0.5em;
+    margin-bottom: 1em;
+}

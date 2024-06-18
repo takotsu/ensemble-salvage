@@ -9,6 +9,7 @@
 <body>
     <header>
         <h1>アンサンブル・サルベージ</h1>
+        <img id="headerImage" src="images/header.jpg" alt="ヘッダー画像">
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -25,13 +26,14 @@
     <main>
         <section id="home">
             <h2>Home</h2>
-            <p>ようこそ、アンサンブル・サルベージの公式ウェブサイトへ。私たちはクラシック音楽を愛し、共に演奏することを楽しむ室内楽団体です。</p>
+            <img src="images/home.jpg" alt="ホーム画像">
+            <p id="homeContent">ようこそ、アンサンブル・サルベージの公式ウェブサイトへ。私たちはクラシック音楽を愛し、共に演奏することを楽しむ室内楽団体です。</p>
             <p>私たちのYouTubeチャンネルもご覧ください: <a href="https://www.youtube.com" target="_blank">YouTubeリンク</a></p>
-            <img src="images/home.jpg" alt="演奏風景">
         </section>
         <section id="members">
             <h2>メンバー</h2>
-            <p>団員紹介のページです。</p>
+            <img src="images/members.jpg" alt="メンバー画像">
+            <p id="membersContent">団員紹介のページです。</p>
             <div class="member">
                 <img src="images/member1.jpg" alt="メンバー1">
                 <h3>メンバー1</h3>
@@ -45,7 +47,8 @@
         </section>
         <section id="schedule">
             <h2>練習日程</h2>
-            <p>定期練習のスケジュールと特別練習の日程をこちらに記載します。</p>
+            <img src="images/schedule.jpg" alt="練習日程画像">
+            <p id="scheduleContent">定期練習のスケジュールと特別練習の日程をこちらに記載します。</p>
             <table>
                 <thead>
                     <tr>
@@ -73,16 +76,17 @@
         </section>
         <section id="activities">
             <h2>これまでの活動</h2>
-            <p>これまでの演奏会やイベントの記録です。</p>
+            <img src="images/activities.jpg" alt="活動画像">
+            <p id="activitiesContent">これまでの演奏会やイベントの記録です。</p>
             <ul>
                 <li>2023年12月 - クリスマスコンサート</li>
                 <li>2024年3月 - 春の定期演奏会</li>
                 <li>2024年5月 - ゴールデンウィークコンサート</li>
             </ul>
-            <img src="images/activity.jpg" alt="活動風景">
         </section>
         <section id="scores">
             <h2>楽譜</h2>
+            <img src="images/scores.jpg" alt="楽譜画像">
             <input type="password" id="scorePassword" placeholder="パスワードを入力してください">
             <button onclick="checkPassword('scorePassword', 'scoreContent')">送信</button>
             <div id="scoreContent" style="display:none;">
@@ -95,6 +99,7 @@
         </section>
         <section id="recordings">
             <h2>音源</h2>
+            <img src="images/recordings.jpg" alt="音源画像">
             <input type="password" id="recordingPassword" placeholder="パスワードを入力してください">
             <button onclick="checkPassword('recordingPassword', 'recordingContent')">送信</button>
             <div id="recordingContent" style="display:none;">
@@ -107,7 +112,8 @@
         </section>
         <section id="videos">
             <h2>動画</h2>
-            <p>演奏動画のページです。</p>
+            <img src="images/videos.jpg" alt="動画画像">
+            <p id="videosContent">演奏動画のページです。</p>
             <ul>
                 <li><a href="https://www.youtube.com/watch?v=example1" target="_blank">演奏動画1</a></li>
                 <li><a href="https://www.youtube.com/watch?v=example2" target="_blank">演奏動画2</a></li>
@@ -121,24 +127,29 @@
             <div id="adminContent" style="display:none;">
                 <h3>セクション編集</h3>
                 <div>
-                    <label for="homeContent">Home:</label>
-                    <textarea id="homeContent" rows="4" cols="50"></textarea>
+                    <label for="homeContentInput">Home:</label>
+                    <textarea id="homeContentInput" rows="4" cols="50"></textarea>
                     <button onclick="updateSection('home')">更新</button>
                 </div>
                 <div>
-                    <label for="membersContent">メンバー:</label>
-                    <textarea id="membersContent" rows="4" cols="50"></textarea>
+                    <label for="membersContentInput">メンバー:</label>
+                    <textarea id="membersContentInput" rows="4" cols="50"></textarea>
                     <button onclick="updateSection('members')">更新</button>
                 </div>
                 <div>
-                    <label for="scheduleContent">練習日程:</label>
-                    <textarea id="scheduleContent" rows="4" cols="50"></textarea>
+                    <label for="scheduleContentInput">練習日程:</label>
+                    <textarea id="scheduleContentInput" rows="4" cols="50"></textarea>
                     <button onclick="updateSection('schedule')">更新</button>
                 </div>
                 <div>
-                    <label for="activitiesContent">これまでの活動:</label>
-                    <textarea id="activitiesContent" rows="4" cols="50"></textarea>
+                    <label for="activitiesContentInput">これまでの活動:</label>
+                    <textarea id="activitiesContentInput" rows="4" cols="50"></textarea>
                     <button onclick="updateSection('activities')">更新</button>
+                </div>
+                <div>
+                    <label for="videosContentInput">動画:</label>
+                    <textarea id="videosContentInput" rows="4" cols="50"></textarea>
+                    <button onclick="updateSection('videos')">更新</button>
                 </div>
             </div>
         </section>
