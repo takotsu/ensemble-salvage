@@ -34,15 +34,22 @@
             <h2>メンバー</h2>
             <img src="images/members.jpg" alt="メンバー画像">
             <p id="membersContent">団員紹介のページです。</p>
-            <div class="member">
-                <img src="images/member1.jpg" alt="メンバー1">
-                <h3>メンバー1</h3>
-                <p>バイオリン担当。音楽大学卒業後、様々なオーケストラで活躍。</p>
-            </div>
-            <div class="member">
-                <img src="images/member2.jpg" alt="メンバー2">
-                <h3>メンバー2</h3>
-                <p>ビオラ担当。数々のコンクールで入賞経験あり。</p>
+            <div class="members">
+                <!-- メンバーのテンプレート -->
+                <template id="memberTemplate">
+                    <div class="member">
+                        <img src="images/member.jpg" alt="メンバー">
+                        <h3>メンバー</h3>
+                        <p>担当と簡単な紹介</p>
+                    </div>
+                </template>
+                <!-- メンバー20人分 -->
+                <script>
+                    for (let i = 0; i < 20; i++) {
+                        const template = document.getElementById('memberTemplate').content.cloneNode(true);
+                        document.querySelector('.members').appendChild(template);
+                    }
+                </script>
             </div>
         </section>
         <section id="schedule">
@@ -150,6 +157,47 @@
                     <label for="videosContentInput">動画:</label>
                     <textarea id="videosContentInput" rows="4" cols="50"></textarea>
                     <button onclick="updateSection('videos')">更新</button>
+                </div>
+                <h3>画像更新</h3>
+                <div>
+                    <label for="headerImageInput">ヘッダー画像:</label>
+                    <input type="text" id="headerImageInput" placeholder="画像のURLを入力してください">
+                    <button onclick="updateImage('header')">更新</button>
+                </div>
+                <div>
+                    <label for="homeImageInput">Home画像:</label>
+                    <input type="text" id="homeImageInput" placeholder="画像のURLを入力してください">
+                    <button onclick="updateImage('home')">更新</button>
+                </div>
+                <div>
+                    <label for="membersImageInput">メンバー画像:</label>
+                    <input type="text" id="membersImageInput" placeholder="画像のURLを入力してください">
+                    <button onclick="updateImage('members')">更新</button>
+                </div>
+                <div>
+                    <label for="scheduleImageInput">練習日程画像:</label>
+                    <input type="text" id="scheduleImageInput" placeholder="画像のURLを入力してください">
+                    <button onclick="updateImage('schedule')">更新</button>
+                </div>
+                <div>
+                    <label for="activitiesImageInput">活動画像:</label>
+                    <input type="text" id="activitiesImageInput" placeholder="画像のURLを入力してください">
+                    <button onclick="updateImage('activities')">更新</button>
+                </div>
+                <div>
+                    <label for="scoresImageInput">楽譜画像:</label>
+                    <input type="text" id="scoresImageInput" placeholder="画像のURLを入力してください">
+                    <button onclick="updateImage('scores')">更新</button>
+                </div>
+                <div>
+                    <label for="recordingsImageInput">音源画像:</label>
+                    <input type="text" id="recordingsImageInput" placeholder="画像のURLを入力してください">
+                    <button onclick="updateImage('recordings')">更新</button>
+                </div>
+                <div>
+                    <label for="videosImageInput">動画画像:</label>
+                    <input type="text" id="videosImageInput" placeholder="画像のURLを入力してください">
+                    <button onclick="updateImage('videos')">更新</button>
                 </div>
             </div>
         </section>

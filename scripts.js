@@ -24,11 +24,11 @@ function adminLogin() {
 }
 
 function loadCurrentContent() {
-    document.getElementById('homeContentInput').value = document.getElementById('homeContent').innerText.trim();
-    document.getElementById('membersContentInput').value = document.getElementById('membersContent').innerText.trim();
-    document.getElementById('scheduleContentInput').value = document.getElementById('scheduleContent').innerText.trim();
-    document.getElementById('activitiesContentInput').value = document.getElementById('activitiesContent').innerText.trim();
-    document.getElementById('videosContentInput').value = document.getElementById('videosContent').innerText.trim();
+    document.getElementById('homeContentInput').value = document.getElementById('homeContent').innerHTML.trim().replace(/<br>/g, '\n');
+    document.getElementById('membersContentInput').value = document.getElementById('membersContent').innerHTML.trim().replace(/<br>/g, '\n');
+    document.getElementById('scheduleContentInput').value = document.getElementById('scheduleContent').innerHTML.trim().replace(/<br>/g, '\n');
+    document.getElementById('activitiesContentInput').value = document.getElementById('activitiesContent').innerHTML.trim().replace(/<br>/g, '\n');
+    document.getElementById('videosContentInput').value = document.getElementById('videosContent').innerHTML.trim().replace(/<br>/g, '\n');
 }
 
 function updateSection(section) {
@@ -46,7 +46,8 @@ function updateSection(section) {
 
 function updateImage(section) {
     const imageId = section + 'Image';
-    const newImageUrl = prompt("新しい画像のURLを入力してください:");
+    const inputId = section + 'ImageInput';
+    const newImageUrl = document.getElementById(inputId).value;
     if (newImageUrl) {
         document.getElementById(imageId).src = newImageUrl;
         alert(section + 'の画像が更新されました。');
